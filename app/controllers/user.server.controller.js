@@ -85,8 +85,8 @@ exports.signout = function (req, res) {
     // Use the Passport 'logout' method to logout
     req.logout();
 
-    // Send a HTTP 204-No Content indicating successfull logout.
-    res.status(204).send();
+    // Redirect the user back to the main application page
+    res.redirect('/');
 };
 
 //uses the Passport-initiated req.
