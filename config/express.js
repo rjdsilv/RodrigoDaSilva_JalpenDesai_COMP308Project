@@ -40,6 +40,10 @@ module.exports = function () {
         secret: config.sessionSecret
     }));
 
+    // Set the application view engine and 'views' folder
+    app.set('views', './app/views');
+    app.set('view engine', 'ejs');
+
     // Configure the flash messages middleware
     app.use(flash());
 
@@ -47,10 +51,13 @@ module.exports = function () {
     app.use(passport.initialize());
     app.use(passport.session());
 
+    // Configure static file serving
+    app.use('/', express.static(path.resolve('./public')));
+    app.use('/lib', express.static(path.resolve('./node_modules')));
+
     // Load the routing files	
     require('../app/routes/user.server.routes')(app);
-    //require('../app/routes/courses.server.routes')(app);
-    //require('../app/routes/index.server.routes')(app);
+    require('../app/routes/index.server.routes')(app);
 
     // Return the Express application instance
     return app;

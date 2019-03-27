@@ -5,8 +5,14 @@ const Schema = mongoose.Schema;
 
 // Define a new 'UserSchema'
 const UserSchema = new Schema({
-    firstName: String,
-    lastName: String,
+    firstName: {
+        type: String,
+        required: "First name is required"
+    },
+    lastName: {
+        type: String,
+        required: "Last name is required"
+    },
     email: {
         type: String,
         // Validate the email format
@@ -30,7 +36,10 @@ const UserSchema = new Schema({
             'Password should be longer'
         ]
     },
-    usertype: String,
+    usertype: {
+        type: String,
+        required: "User type is required"
+    },
     salt: {
         type: String
     },
