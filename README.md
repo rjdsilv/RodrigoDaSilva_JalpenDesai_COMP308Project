@@ -1,3 +1,3 @@
-﻿# RodrigoDaSilva_JalpenDesai_MorganLidner_COMP308Project
+﻿# RodrigoDaSilva_JalpenDesai_MorganLindner_COMP308Project
 
 
