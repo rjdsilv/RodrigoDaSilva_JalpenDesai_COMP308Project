@@ -1,14 +1,16 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication/authentication.service';
+import { VitalSignsService } from './vital-signs.service';
 
 @Component({
-    selector: 'home',
-    templateUrl: './app/home/home.template.html'
+    selector: 'vital-signs',
+    templateUrl: './app/vital-signs/vital-signs.template.html',
+    providers: [VitalSignsService]
 })
 
-export class HomeComponent {
+export class VitalSignsComponent {
     user: any;
     constructor(private _authenticationService: AuthenticationService, private _router: Router) {
         this.user = this._authenticationService.user;

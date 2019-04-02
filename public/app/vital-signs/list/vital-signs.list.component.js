@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router', '../authentication/authentication.service'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/router', '../../authentication/authentication.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,7 +11,7 @@ System.register(['@angular/core', '@angular/router', '../authentication/authenti
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, authentication_service_1;
-    var HomeComponent;
+    var VitalSignsListComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,8 +24,8 @@ System.register(['@angular/core', '@angular/router', '../authentication/authenti
                 authentication_service_1 = authentication_service_1_1;
             }],
         execute: function() {
-            HomeComponent = (function () {
-                function HomeComponent(_authenticationService, _router) {
+            VitalSignsListComponent = (function () {
+                function VitalSignsListComponent(_authenticationService, _router) {
                     this._authenticationService = _authenticationService;
                     this._router = _router;
                     this.user = this._authenticationService.user;
@@ -33,20 +33,20 @@ System.register(['@angular/core', '@angular/router', '../authentication/authenti
                         this._router.navigate(['/authentication/signin']);
                     }
                 }
-                HomeComponent.prototype.isNurse = function () {
+                VitalSignsListComponent.prototype.isNurse = function () {
                     return this.user && this.user.usertype === 'nurse';
                 };
-                HomeComponent = __decorate([
+                VitalSignsListComponent = __decorate([
                     core_1.Component({
-                        selector: 'home',
-                        templateUrl: './app/home/home.template.html'
+                        selector: 'vital-signs',
+                        templateUrl: './app/vital-signs/list/vital-signs.list.template.html'
                     }), 
                     __metadata('design:paramtypes', [authentication_service_1.AuthenticationService, router_1.Router])
-                ], HomeComponent);
-                return HomeComponent;
+                ], VitalSignsListComponent);
+                return VitalSignsListComponent;
             }());
-            exports_1("HomeComponent", HomeComponent);
+            exports_1("VitalSignsListComponent", VitalSignsListComponent);
         }
     }
 });
-//# sourceMappingURL=home.component.js.map
+//# sourceMappingURL=vital-signs.list.component.js.map
