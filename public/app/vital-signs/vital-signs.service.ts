@@ -15,9 +15,11 @@ export class VitalSignsService {
             .catch(this.handleError);
     }
 
-    list(): Observable<any> {
+    list(patientId: string): Observable<any> {
+        console.log('PATIENT = ' + patientId);
+
         return this._http
-            .get(this._baseURL)
+            .get(`${this._baseURL}/${patientId}`)
             .map((res: Response) => res.json())
             .catch(this.handleError);
     }

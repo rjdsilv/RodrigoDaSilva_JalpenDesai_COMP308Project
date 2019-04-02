@@ -28,7 +28,7 @@ exports.create = function (req, res) {
 };
 //
 exports.list = function (req, res) {
-    const patientId = req.patient ? req.patient : "0";
+    const patientId = req.params.patientId ? req.params.patientId : "0";
     console.log("PATIENT ID = " + patientId);
 
     VitalSigns.find({ patient: new ObjectId(patientId) }).sort('-created').exec((err, vitalSigns) => {

@@ -24,6 +24,11 @@ export class VitalSignsCreateComponent {
         private _router: Router
     ) {
         this.user = this._authenticationService.user;
+
+        if (!this.user) {
+            this._router.navigate(['/authentication/signin']);
+        }
+
         this._patientService
             .list()
             .subscribe(
@@ -33,19 +38,7 @@ export class VitalSignsCreateComponent {
                 error => {
                     this.errorMessage = error;
                 }
-            )
-
-        if (!this.user) {
-            this._router.navigate(['/authentication/signin']);
-        }
-    }
-
-    listPatients() {
-
-    }
-
-    isNurse() {
-        return this.user && this.user.usertype === 'nurse';
+            );
     }
 
     hasError() {
@@ -62,12 +55,11 @@ export class VitalSignsCreateComponent {
             .create(this.vitalSigns)
             .subscribe(
                 createdVitalSign => {
-                    console.log(createdVitalSign)
+                    this.success = true;
                 },
                 error => {
                     this.errorMessage = error;
                 }
         );
-        this.success = true;
     }
 };

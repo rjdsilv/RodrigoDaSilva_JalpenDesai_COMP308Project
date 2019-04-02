@@ -42,6 +42,9 @@ System.register(['@angular/core', '@angular/router', '../../authentication/authe
                     this.errorMessage = '';
                     this.success = false;
                     this.user = this._authenticationService.user;
+                    if (!this.user) {
+                        this._router.navigate(['/authentication/signin']);
+                    }
                     this._patientService
                         .list()
                         .subscribe(function (patientList) {
@@ -49,15 +52,7 @@ System.register(['@angular/core', '@angular/router', '../../authentication/authe
                     }, function (error) {
                         _this.errorMessage = error;
                     });
-                    if (!this.user) {
-                        this._router.navigate(['/authentication/signin']);
-                    }
                 }
-                VitalSignsCreateComponent.prototype.listPatients = function () {
-                };
-                VitalSignsCreateComponent.prototype.isNurse = function () {
-                    return this.user && this.user.usertype === 'nurse';
-                };
                 VitalSignsCreateComponent.prototype.hasError = function () {
                     return this.errorMessage.length > 0;
                 };
@@ -71,11 +66,10 @@ System.register(['@angular/core', '@angular/router', '../../authentication/authe
                     this._vitalSignsService
                         .create(this.vitalSigns)
                         .subscribe(function (createdVitalSign) {
-                        console.log(createdVitalSign);
+                        _this.success = true;
                     }, function (error) {
                         _this.errorMessage = error;
                     });
-                    this.success = true;
                 };
                 VitalSignsCreateComponent = __decorate([
                     core_1.Component({

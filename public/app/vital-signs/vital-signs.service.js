@@ -36,9 +36,10 @@ System.register(['rxjs/Rx', 'rxjs/Observable', '@angular/core', '@angular/http']
                         .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
-                VitalSignsService.prototype.list = function () {
+                VitalSignsService.prototype.list = function (patientId) {
+                    console.log('PATIENT = ' + patientId);
                     return this._http
-                        .get(this._baseURL)
+                        .get(this._baseURL + "/" + patientId)
                         .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
