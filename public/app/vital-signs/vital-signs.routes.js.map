@@ -1,1 +1,0 @@
-{"version":3,"file":"vital-signs.routes.js","sourceRoot":"","sources":["vital-signs.routes.ts"],"names":[],"mappings":";;;;QAKa,gBAAgB;;;;;;;;;;;;;YAAhB,8BAAA,gBAAgB,GAAW,CAAC;oBACrC,IAAI,EAAE,aAAa;oBACnB,SAAS,EAAE,2CAAmB;oBAC9B,QAAQ,EAAE;wBACN,EAAE,IAAI,EAAE,EAAE,EAAE,SAAS,EAAE,oDAAuB,EAAE;wBAChD,EAAE,IAAI,EAAE,QAAQ,EAAE,SAAS,EAAE,wDAAyB,EAAE;qBAC3D;iBACJ,CAAC,CAAA,CAAC"}
