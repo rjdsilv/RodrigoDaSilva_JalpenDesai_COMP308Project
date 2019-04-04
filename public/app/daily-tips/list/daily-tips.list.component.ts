@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../authentication/authentication.service';
-import { PatientService } from '../../patient/patient.service';
+import { DailyTipsService } from '../daily-tips.service';
 
 @Component({
     selector: 'daily-tips-list',
@@ -12,6 +12,7 @@ import { PatientService } from '../../patient/patient.service';
 export class DailyTipsListComponent {
     user: any;
     patients = [];
+    dailyTips: any = {};
     errorMessage: string = '';
     success = false;
     selectedPatient: any;
@@ -19,7 +20,7 @@ export class DailyTipsListComponent {
 
     constructor(
         private _authenticationService: AuthenticationService,
-        private _patientService: PatientService,
+        private _dailyTipsService: DailyTipsService,
         private _router: Router
     ) {
         this.user = this._authenticationService.user;
@@ -28,16 +29,7 @@ export class DailyTipsListComponent {
             this._router.navigate(['/authentication/signin']);
         }
 
-        this._patientService
-            .list()
-            .subscribe(
-                patientList => {
-                    this.patients = patientList;
-                },
-                error => {
-                    this.errorMessage = error;
-                }
-            );
+        this.list();
     }
 
     hasError() {
@@ -45,19 +37,19 @@ export class DailyTipsListComponent {
     }
 
     list() {
-        //if (!this.selectedPatient) {
-        //    this.errorMessage = 'Please, select a patient from the list.';
-        //} else {
-        //    this.errorMessage = '';
-        //    this.showWarning = false;
-        //    this._vitalSignsService
-        //        .list(this.selectedPatient)
-        //        .subscribe(vitalSigns => {
-        //            this.vitalSigns = vitalSigns;
-        //            this.showWarning = this.vitalSigns.length === 0;
-        //        }, error => {
-        //            this.errorMessage = error;
-        //        });
-        //}
+        this.errorMessage = '';
+        this.showWarning = false;
+        this._dailyTipsService
+            .list(this.user._id)
+            .subscribe(dailyTips => {
+                this.dailyTips = dailyTips;
+                this.showWarning = this.dailyTips.length === 0;
+            }, error => {
+                this.errorMessage = error;
+            });
+    }
+
+    formatDate(date: string) {
+        return new Date(date).toLocaleString('en-CA');
     }
 }
