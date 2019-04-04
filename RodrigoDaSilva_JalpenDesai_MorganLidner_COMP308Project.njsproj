@@ -34,14 +34,17 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\controllers\daily-tips.server.controller.js" />
     <Compile Include="app\controllers\index.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\controllers\patient.server.controller.js" />
     <Compile Include="app\controllers\user.server.controller.js" />
     <Compile Include="app\controllers\vital-signs.server.controller.js" />
+    <Compile Include="app\models\daily-tips.server.model.js" />
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\models\vital-signs.server.model.js" />
+    <Compile Include="app\routes\daily-tips.server.routes.js" />
     <Compile Include="app\routes\index.server.routes.js">
       <SubType>Code</SubType>
     </Compile>

@@ -59,6 +59,7 @@ module.exports = function () {
     require('../app/routes/user.server.routes')(app);
     require('../app/routes/patient.server.routes')(app);
     require('../app/routes/vital-signs.server.routes')(app);
+    require('../app/routes/daily-tips.server.routes')(app);
     require('../app/routes/index.server.routes')(app);
 
     // Return the Express application instance
