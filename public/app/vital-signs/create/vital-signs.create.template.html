@@ -25,7 +25,7 @@
         <div class="col-6 app-box">
             <div class="row">
                 <div class="col-12">
-                    <label for="code">Patients</label>
+                    <label for="patients">Patients</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-injured"></i></span>
@@ -39,64 +39,64 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="code">Body Temperature (&#8451;)</label>
+                    <label for="bodyTemperature">Body Temperature (&#8451;)</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-thermometer"></i></span>
                         </div>
                         <input type="text"
-                               name="code"
+                               name="bodyTemperature"
                                class="form-control"
                                placeholder="Please, enter patient's body temperature"
-                               aria-label="Code"
+                               aria-label="BodyTemperature"
                                aria-describedby="basic-addon1"
                                [(ngModel)]="vitalSigns.bodyTemperature">
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <label for="code">Heart rate (Heartbeats per minute)</label>
+                    <label for="heartRate">Heart rate (Heartbeats per minute)</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-heartbeat"></i></span>
                         </div>
                         <input type="text"
-                               name="name"
+                               name="heartRate"
                                class="form-control"
                                placeholder="Please, enter patient's heartbeats per minute"
-                               aria-label="Name"
+                               aria-label="HeartRate"
                                aria-describedby="basic-addon1"
                                [(ngModel)]="vitalSigns.heartRate">
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <label for="code">Blood Pressure</label>
+                    <label for="bloodPressure">Blood Pressure</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-tint"></i></span>
                         </div>
                         <input type="text"
-                               name="section"
+                               name="bloodPressure"
                                class="form-control"
                                placeholder="Please, enter patient's blood pressure (e.g. 120-80)"
-                               aria-label="Section"
+                               aria-label="BloodPressure"
                                aria-describedby="basic-addon1"
                                [(ngModel)]="vitalSigns.bloodPressure">
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <label for="code">Respiratory Rate (Breaths per minute)</label>
+                    <label for="respiratoryRate">Respiratory Rate (Breaths per minute)</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-stethoscope"></i></span>
                         </div>
                         <input type="text"
-                               name="semester"
+                               name="respiratoryRate"
                                class="form-control"
                                placeholder="Please, enter patient's respiratory rate"
-                               aria-label="Semester"
+                               aria-label="RespiratoryRate"
                                aria-describedby="basic-addon1"
                                [(ngModel)]="vitalSigns.respiratoryRate">
                     </div>

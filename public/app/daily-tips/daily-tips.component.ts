@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication/authentication.service';
+import { DailyTipsService } from './daily-tips.service';
 
 @Component({
     selector: 'daily-tips',
-    templateUrl: './app/daily-tips/daily-tips.template.html'/*,
-    providers: [VitalSignsService]*/
+    templateUrl: './app/daily-tips/daily-tips.template.html',
+    providers: [DailyTipsService]
 })
 
 export class DailyTipsComponent {

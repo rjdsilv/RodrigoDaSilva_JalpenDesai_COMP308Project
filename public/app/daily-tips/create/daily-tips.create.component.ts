@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { PatientService } from '../../patient/patient.service';
+import { DailyTipsService } from '../daily-tips.service';
 
 @Component({
     selector: 'daily-tips-create',
@@ -12,12 +13,14 @@ import { PatientService } from '../../patient/patient.service';
 export class DailyTipsCreateComponent {
     user: any;
     patients = [];
+    dailyTip: any = {};
     errorMessage: string = '';
     success = false;
 
     constructor(
         private _authenticationService: AuthenticationService,
         private _patientService: PatientService,
+        private _dailyTipService: DailyTipsService,
         private _router: Router
     ) {
         this.user = this._authenticationService.user;
@@ -43,20 +46,20 @@ export class DailyTipsCreateComponent {
     }
 
     getSelectedPatient() {
-        //const selected = this.patients.filter(patient => patient._id === this.vitalSigns.patient);
-        //return selected[0];
+        const selected = this.patients.filter(patient => patient._id === this.dailyTip.patient);
+        return selected[0];
     }
 
     create() {
-        //this._vitalSignsService
-        //    .create(this.vitalSigns)
-        //    .subscribe(
-        //        createdVitalSign => {
-        //            this.success = true;
-        //        },
-        //        error => {
-        //            this.errorMessage = error;
-        //        }
-        //    );
+        this._dailyTipService
+            .create(this.dailyTip)
+            .subscribe(
+                createdDailyTip => {
+                    this.success = true;
+                },
+                error => {
+                    this.errorMessage = error;
+                }
+            );
     }
 };

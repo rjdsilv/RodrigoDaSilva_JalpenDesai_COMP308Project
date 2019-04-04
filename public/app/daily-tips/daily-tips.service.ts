@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Request, RequestMethod, Response } from '@angular/http';
 
 @Injectable()
-export class VitalSignsService {
-    private _baseURL = 'api/vital-signs';
+export class DailyTipsService {
+    private _baseURL = 'api/daily-tips';
     constructor(private _http: Http) { }
 
-    create(vitalSigns: any): Observable<any> {
+    create(dailyTips: any): Observable<any> {
         return this._http
-            .post(this._baseURL, vitalSigns)
+            .post(this._baseURL, dailyTips)
             .map((res: Response) => res.json())
             .catch(this.handleError);
     }
