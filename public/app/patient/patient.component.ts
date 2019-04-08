@@ -1,14 +1,13 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
-    selector: 'home',
-    templateUrl: './app/home/home.template.html'
+    selector: 'patient',
+    templateUrl: './app/patient/patient.template.html'
 })
-
-export class HomeComponent {
+export class PatientComponent {
     user: any;
     constructor(private _authenticationService: AuthenticationService, private _router: Router) {
         this.user = this._authenticationService.user;
@@ -17,10 +16,10 @@ export class HomeComponent {
             this._router.navigate(['/authentication/signin']);
         }
 
-        if (!this.isNurse()) {
-            this._router.navigate(['/daily-tips']);
-        } else {
+        if (this.isNurse()) {
             this._router.navigate(['/vital-signs']);
+        } else {
+            this._router.navigate(['/patient/motivation']);
         }
     }
 

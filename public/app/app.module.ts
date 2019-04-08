@@ -11,6 +11,7 @@ import { HomeModule } from './home/home.module';
 import { VitalSignsModule } from './vital-signs/vital-signs.module';
 import { PatientService } from './patient/patient.service';
 import { DailyTipsModule } from './daily-tips/daily-tips.module';
+import { PatientModule } from './patient/patient.module';
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import { DailyTipsModule } from './daily-tips/daily-tips.module';
         AuthenticationModule,
         VitalSignsModule,
         DailyTipsModule,
+        PatientModule,
         RouterModule.forRoot(AppRoutes),
     ],
     declarations: [

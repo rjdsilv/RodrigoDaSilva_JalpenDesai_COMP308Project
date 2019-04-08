@@ -37,16 +37,18 @@ export class DailyTipsListComponent {
     }
 
     list() {
-        this.errorMessage = '';
-        this.showWarning = false;
-        this._dailyTipsService
-            .list(this.user._id)
-            .subscribe(dailyTips => {
-                this.dailyTips = dailyTips;
-                this.showWarning = this.dailyTips.length === 0;
-            }, error => {
-                this.errorMessage = error;
-            });
+        if (this.user) {
+            this.errorMessage = '';
+            this.showWarning = false;
+            this._dailyTipsService
+                .list(this.user._id)
+                .subscribe(dailyTips => {
+                    this.dailyTips = dailyTips;
+                    this.showWarning = this.dailyTips.length === 0;
+                }, error => {
+                    this.errorMessage = error;
+                });
+        }
     }
 
     formatDate(date: string) {
