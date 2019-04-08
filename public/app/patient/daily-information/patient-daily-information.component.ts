@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../authentication/authentication.service';
+import { PatientDailyInformationService } from './patient-daily-information.service';
+import { AuthenticationService } from '../../authentication/authentication.service';
 
 @Component({
-    selector: 'patient',
-    templateUrl: './app/patient/patient.template.html'
+    selector: 'daily-information',
+    templateUrl: './app/patient/daily-information/patient-daily-information.template.html',
+    providers: [PatientDailyInformationService]
 })
-export class PatientComponent {
+
+export class PatientDailyInformationComponent {
     user: any;
     constructor(private _authenticationService: AuthenticationService, private _router: Router) {
         this.user = this._authenticationService.user;
 
         if (!this.user) {
             this._router.navigate(['/authentication/signin']);
-        }
-
-        if (this.isNurse()) {
-            this._router.navigate(['/vital-signs']);
         }
     }
 

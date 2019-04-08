@@ -34,6 +34,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\controllers\daily-information.server.controller.js" />
     <Compile Include="app\controllers\daily-tips.server.controller.js" />
     <Compile Include="app\controllers\index.server.controller.js">
       <SubType>Code</SubType>
@@ -41,9 +42,13 @@
     <Compile Include="app\controllers\patient.server.controller.js" />
     <Compile Include="app\controllers\user.server.controller.js" />
     <Compile Include="app\controllers\vital-signs.server.controller.js" />
+    <Compile Include="app\models\daily-information.server.model.js" />
     <Compile Include="app\models\daily-tips.server.model.js" />
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\models\vital-signs.server.model.js" />
+    <Compile Include="app\routes\daily-information.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes\daily-tips.server.routes.js" />
     <Compile Include="app\routes\index.server.routes.js">
       <SubType>Code</SubType>
@@ -83,6 +88,8 @@
     <Content Include="public\app\daily-tips\daily-tips.template.html" />
     <Content Include="public\app\daily-tips\list\daily-tips.list.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\patient\daily-information\create\patient-daily-information.create.template.html" />
+    <Content Include="public\app\patient\daily-information\patient-daily-information.template.html" />
     <Content Include="public\app\patient\motivation\patient-motivation.template.html" />
     <Content Include="public\app\patient\patient.template.html" />
     <Content Include="public\app\vital-signs\create\vital-signs.create.template.html" />
@@ -124,7 +131,10 @@
     <Folder Include="public\app\home\" />
     <Folder Include="public\app\daily-tips\" />
     <Folder Include="public\app\patient\" />
+    <Folder Include="public\app\patient\daily-information\create\" />
+    <Folder Include="public\app\patient\daily-information\list\" />
     <Folder Include="public\app\patient\motivation\" />
+    <Folder Include="public\app\patient\daily-information\" />
     <Folder Include="public\app\vital-signs\" />
     <Folder Include="public\app\vital-signs\create\" />
     <Folder Include="public\app\vital-signs\list\" />
@@ -151,6 +161,9 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\patient\daily-information\create\patient-daily-information.create.component.ts" />
+    <TypeScriptCompile Include="public\app\patient\daily-information\patient-daily-information.component.ts" />
+    <TypeScriptCompile Include="public\app\patient\daily-information\patient-daily-information.service.ts" />
     <TypeScriptCompile Include="public\app\patient\motivation\patient-motivation.component.ts" />
     <TypeScriptCompile Include="public\app\patient\patient.component.ts" />
     <TypeScriptCompile Include="public\app\patient\patient.module.ts" />
