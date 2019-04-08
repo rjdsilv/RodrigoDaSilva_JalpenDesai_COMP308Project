@@ -51,6 +51,9 @@ export class DailyTipsCreateComponent {
     }
 
     create() {
+        this.success = false;
+        this.errorMessage = '';
+
         this._dailyTipService
             .create(this.dailyTip)
             .subscribe(

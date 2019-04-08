@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const DailyInfoSchema = new Schema({
     info: {
         type: String,
-        required: "Daily tip is required"
+        required: "Daily information is required"
     },
     patient: {
         type: Schema.ObjectId,

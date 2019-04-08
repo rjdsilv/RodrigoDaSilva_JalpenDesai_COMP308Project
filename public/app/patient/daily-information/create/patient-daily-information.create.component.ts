@@ -33,6 +33,9 @@ export class PatientDailyInformationCreateComponent {
     }
 
     create() {
+        this.success = false;
+        this.errorMessage = '';
+
         this.dailyInfo.patient = this.user._id;
         this._dailyInfoService
             .create(this.dailyInfo)
