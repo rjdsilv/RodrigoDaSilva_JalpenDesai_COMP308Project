@@ -56,7 +56,6 @@ export class PatientDailyInformationListComponent {
             this._dailyInfoService
                 .list(this.selectedPatient)
                 .subscribe(dailyInfo => {
-                    console.log(dailyInfo);
                     this.dailyInfo = dailyInfo;
                     this.showWarning = this.dailyInfo.length === 0;
                 }, error => {

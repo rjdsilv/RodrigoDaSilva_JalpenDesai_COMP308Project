@@ -10,6 +10,7 @@ import { PatientDailyInformationComponent } from './daily-information/patient-da
 import { PatientDailyInformationCreateComponent } from './daily-information/create/patient-daily-information.create.component';
 import { PatientDailyInformationListComponent } from './daily-information/list/patient-daily-information.list.component';
 import { PatientAlertComponent } from './alert/patient-alert.component';
+import { PatientSymptomsComponent } from './symptoms/patient-symptoms.component';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { PatientAlertComponent } from './alert/patient-alert.component';
         PatientDailyInformationComponent,
         PatientDailyInformationCreateComponent,
         PatientDailyInformationListComponent,
-        PatientAlertComponent
+        PatientAlertComponent,
+        PatientSymptomsComponent
     ]
 })
 export class PatientModule { }

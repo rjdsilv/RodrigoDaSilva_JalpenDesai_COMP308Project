@@ -22,7 +22,6 @@ function getErrorMessage(err) {
 };
 //
 exports.sendMail = function (req, res) {
-    console.log(req.body);
     const email = req.body.message;
     const user = req.body.user;
     const mailOptions = {
