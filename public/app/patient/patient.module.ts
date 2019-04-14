@@ -8,6 +8,7 @@ import { PatientComponent } from './patient.component';
 import { PatientMotivationComponent } from './motivation/patient-motivation.component';
 import { PatientDailyInformationComponent } from './daily-information/patient-daily-information.component';
 import { PatientDailyInformationCreateComponent } from './daily-information/create/patient-daily-information.create.component';
+import { PatientDailyInformationListComponent } from './daily-information/list/patient-daily-information.list.component';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import { PatientDailyInformationCreateComponent } from './daily-information/crea
         PatientComponent,
         PatientMotivationComponent,
         PatientDailyInformationComponent,
-        PatientDailyInformationCreateComponent
+        PatientDailyInformationCreateComponent,
+        PatientDailyInformationListComponent
     ]
 })
 export class PatientModule { }

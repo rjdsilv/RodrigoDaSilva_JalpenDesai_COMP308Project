@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../../authentication/authentication.service';
 import { DailyTipsService } from '../daily-tips.service';
+import { AuthenticationService } from '../../authentication/authentication.service';
 
 @Component({
     selector: 'daily-tips-list',
@@ -15,7 +15,6 @@ export class DailyTipsListComponent {
     dailyTips: any = {};
     errorMessage: string = '';
     success = false;
-    selectedPatient: any;
     showWarning = false;
 
     constructor(

@@ -15,10 +15,6 @@ export class PatientComponent {
         if (!this.user) {
             this._router.navigate(['/authentication/signin']);
         }
-
-        if (this.isNurse()) {
-            this._router.navigate(['/vital-signs']);
-        }
     }
 
     isNurse() {
