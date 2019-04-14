@@ -39,6 +39,7 @@
     <Compile Include="app\controllers\index.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\controllers\patient-alert-mailer.server.controller.js" />
     <Compile Include="app\controllers\patient.server.controller.js" />
     <Compile Include="app\controllers\user.server.controller.js" />
     <Compile Include="app\controllers\vital-signs.server.controller.js" />
@@ -51,6 +52,9 @@
     </Compile>
     <Compile Include="app\routes\daily-tips.server.routes.js" />
     <Compile Include="app\routes\index.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\patient-alert-mailer.server.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\patient.server.routes.js" />
@@ -88,6 +92,7 @@
     <Content Include="public\app\daily-tips\daily-tips.template.html" />
     <Content Include="public\app\daily-tips\list\daily-tips.list.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\patient\alert\patient-alert.template.html" />
     <Content Include="public\app\patient\daily-information\create\patient-daily-information.create.template.html" />
     <Content Include="public\app\patient\daily-information\patient-daily-information.template.html" />
     <Content Include="public\app\patient\motivation\patient-motivation.template.html" />
@@ -135,6 +140,7 @@
     <Folder Include="public\app\patient\daily-information\list\" />
     <Folder Include="public\app\patient\motivation\" />
     <Folder Include="public\app\patient\daily-information\" />
+    <Folder Include="public\app\patient\alert\" />
     <Folder Include="public\app\vital-signs\" />
     <Folder Include="public\app\vital-signs\create\" />
     <Folder Include="public\app\vital-signs\list\" />
@@ -161,6 +167,8 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\patient\alert\patient-alert.component.ts" />
+    <TypeScriptCompile Include="public\app\patient\alert\patient-alert.service.ts" />
     <TypeScriptCompile Include="public\app\patient\daily-information\create\patient-daily-information.create.component.ts" />
     <TypeScriptCompile Include="public\app\patient\daily-information\list\patient-daily-information.list.template.html" />
     <TypeScriptCompile Include="public\app\patient\daily-information\list\patient-daily-information.list.component.ts" />

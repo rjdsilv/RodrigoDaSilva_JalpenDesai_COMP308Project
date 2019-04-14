@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { PatientComponent } from './patient.component';
 import { PatientMotivationComponent } from './motivation/patient-motivation.component';
 import { PatientDailyInformationComponent } from './daily-information/patient-daily-information.component';
+import { PatientAlertComponent } from './alert/patient-alert.component';
 
 export const PatientRoutes: Routes = [{
     path: 'patient',
@@ -14,6 +15,9 @@ export const PatientRoutes: Routes = [{
         }, {
             path: 'daily-info',
             component: PatientDailyInformationComponent
+        }, {
+            path: 'alert',
+            component: PatientAlertComponent
         }
     ]
 }];
